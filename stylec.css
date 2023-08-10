@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Nunito+Sans:wght@300&family=Poppins&display=swap');
+body{
+    line-height: 1.5;
+    font-family:'Poppins', sans-serif;
+    color: black;
+}
+.chatbox-wrapper
+{
+position: fixed;
+bottom: 2rem;
+right: 2rem;
+width: 4rem;
+height: 4rem;
+z-index: 1;
+}
+.chatbox-toogle
+{
+    width: 100%;
+    height: 100%;
+    background:#29217a;
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, .71);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .5s;
+}
+.chatbox-toogle:active
+{
+    transform: scale(.5);
+}
+.chatbox-message-wrapper
+{
+    position: absolute;
+    bottom: calc(100% + 1rem);
+    right: 0;
+    width: 350px;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, .3);
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: .2s;
+}
+.chatbox-message-wrapper.show{
+    transform:scale(1);
+
+
+}
+.chatbox-message-header h4 span{
+    color: #ff0157;
+}
+.chatbox-message-header h4{
+    margin-left: 15px;
+    letter-spacing: 1px;
+}
+.chatbox-message-header p{
+    margin-left: 15px;
+    margin-top: 0px;
+}
+.chatbox-message-header
+{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f5f5f5;
+    padding: .75rem 1.5rem;
+
+}
+.chatbox-message-profile
+{
+    display: flex;
+    align-items: center;
+    grid-gap:.5rem;
+}
+
+.chatbox-message-image{
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.chatbox-message-name{
+    font-size: 1.1rem;
+    font-weight: 600;
+
+}
+.chatbox-message-status
+{
+    font-size: .875rem;
+    color: green;
+}
+.chatbox-message-dropdown-toggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border-radius: 50%;
+    line-height: -1;
+}
+.chatbox-message-dropdown{
+    position: relative;
+
+}
+.chatbox-message-dropdown-toggle:hover
+{
+    background: lightgray;
+}
+.chatbox-message-dropdown-menu
+{
+    list-style: none;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    padding: .5rem 0;
+    width: 120px;
+    box-shadow: .25rem .25rem 1.5rem rgba(0, 0, 0, .3);
+    transform: scale(0);
+    transform-origin: top right;
+    transition: .2s;
+    
+}
+.chatbox-message-dropdown-menu.show
+{
+    transform: scale(1);
+}
+.chatbox-message-dropdown-menu a{
+    font-size: .875rem;
+    font-weight: 500;
+    color: black;
+    text-decoration: none; 
+    padding: .5rem 1rem;
+    display: block;
+}
+.chatbox-message-dropdown-menu a:hover{
+    background: lightgray;
+}
+.chatbox-message-content{
+    background: lightgray;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+.chatbox-message-item{
+    width: 90%;
+    padding: .75rem 0.5rem 0.5rem 0.5rem;
+
+}
+.send
+{
+    align-self: flex-end;
+    background: #2196f3;
+    color: #fff;
+    border-radius: .75rem 0 .75rem .75rem;
+}
+.recieved
+{
+    background: #fff;
+    border-radius: 0 .75rem .75rem .75rem;
+    box-shadow: .25rem .25rem 1.5rem rgba(0, 0, 0, .05);
+}
+.chatbox-message-item-time{
+    float: right;
+    font-size: .75rem;
+    margin-top: .5rem;
+    display: inline-block;
+
+}
+.chatbox-message-bottom
+{
+    background: #fff;
+    padding: .75rem 1.5rem;
+}
+.chatbox-message-form{
+    display: flex;
+    align-items: center;
+    background: #DCDCDC;
+    border-radius: .5rem;
+    padding: .5rem 1.25rem;
+}
+.chatbox-message-input
+{
+    background: transparent;
+    outline: none;
+    border: none;
+    resize: none;
+    scrollbar-width: none;
+}
+.chatbox-message-input::-webkit-scrollbar{
+    display: none;
+
+}
+.chatbox-message-submit{
+    font-size: 1.25rem;
+    color: #2196f3;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding-left: 5rem;
+}
+.chatbox-message-no-message{
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media screen and (max-width:576px) {
+    .chatbox-message-wrapper{
+        width: calc(100vw - 2rem);
+    }
+    .chatbox-wrapper
+{
+
+    bottom: 1rem;
+    right: 1rem;
+}
+}
